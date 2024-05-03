@@ -68,11 +68,9 @@ export default function Settings({ trigger }: { trigger: JSX.Element }) {
 							</SelectTrigger>
 							<SelectContent>
 								<SelectGroup>
-									<SelectLabel>OpenAI</SelectLabel>
-									<SelectItem value='gpt-3.5-turbo'>GPT-3.5 Turbo</SelectItem>
-									<SelectItem value='gpt-4-turbo-2024-04-09'>
-										GPT-4 Turbo
-									</SelectItem>
+									<SelectLabel>Groq</SelectLabel>
+									<SelectItem value='llama3-70b-8192'>Llama 3 70B</SelectItem>
+									<SelectItem value='llama3-8b-8192'>Llama 3 8B</SelectItem>
 								</SelectGroup>
 								<SelectGroup>
 									{isPending || (data && data.length > 0) ? (

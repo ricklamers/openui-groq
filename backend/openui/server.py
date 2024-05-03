@@ -106,7 +106,7 @@ async def chat_completions(
         input_tokens = count_tokens(data["messages"])
         # TODO: we always assume 4096 max tokens (random fudge factor here)
         data["max_tokens"] = 4096 - input_tokens - 20
-        if data.get("model").startswith("gpt"):
+        if data.get("model").startswith("gpt") or data.get("model").startswith("llama"):
             if data["model"] == "gpt-4" or data["model"] == "gpt-4-32k":
                 raise HTTPException(status=400, data="Model not supported")
             response: AsyncStream[ChatCompletionChunk] = (
